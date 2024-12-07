@@ -1,0 +1,102 @@
+Referral website html and css Wesite 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .referral-program {
+            margin-top: 20px;
+        }
+        .leaderboard {
+            margin-top: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Referral Website</h1>
+        </div>
+        <div class="referral-program">
+            <h2>Referral Program</h2>
+            <p>Earn game-like money by referring friends!</p>
+            <button id="refer-btn">Refer a Friend</button>
+            <div id="referral-link"></div>
+        </div>
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Doe</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Bob Smith</td>
+                    <td>600</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Generate a random referral link
+        const referralLink = `https://example.com/ref/${Math.random().toString(36).substr(2, 9)}`;
+
+        // Display the referral link
+        document.getElementById("referral-link").innerHTML = `<p>Your referral link: <a href="${referralLink}" target="_blank">${referralLink}</a></p>`;
+
+        // Add event listener to the refer button
+        document.getElementById("refer-btn").addEventListener("click", () => {
+            // Copy the referral link to the clipboard
+            navigator.clipboard.writeText(referralLink);
+            alert("Referral link copied to clipboard!");
+        });
+    </script>
+</body>
+</html>
